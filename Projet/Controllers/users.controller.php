@@ -9,6 +9,7 @@ if (isset($_REQUEST["action"])) {
             $_SESSION["userConnect"]=$userConnect;  // authentification 
            if ($userConnect["role"]=="ROLE_RP") {
             $profs=findAllProf();
+            
             loadView("RP/liste.prof.html.php",["profs"=>$profs]);
            }
         //    else if ($userConnect["role"]=="ROLE_AC") {
@@ -37,4 +38,3 @@ if (isset($_REQUEST["action"])) {
       // loadView("loging.html.php");
         require_once('../views/layout/connexion.layout.php');
     }
-    
