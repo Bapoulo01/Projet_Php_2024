@@ -1,0 +1,157 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+section{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    display: flex;
+}
+.Dashboard{
+    width: 20%;
+    height: 100%;
+    background-color: #16858C;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+.profil{
+    width: 150px;
+    height: 100px;
+    background-image: url(Images/profi.jpg);
+    background-size: cover;
+    border-radius: 100%;
+    margin:10% 35%;
+}
+
+.Dashboard a{
+    width: 90%;
+    height: 50px;
+    background-color: #16858C;
+    margin-bottom: 2%; 
+    border: 1px solid white; 
+    font-size: 20px;
+    font-weight: bolder;
+    color: white;
+    border-radius: 5px/5px;
+
+}
+.Dashboard a:last-child{
+    border: 1px solid rgba(4, 4, 4, 0.46);
+    background-color: rgba(4, 4, 4, 0.46);
+    cursor: pointer; 
+}
+.Dashboard a:hover{
+    background-color: rgba(4, 4, 4, 0.46);
+    border: 1px solid rgba(4, 4, 4, 0.46);
+    border-radius: 0px 15px 0px 10px;
+    color: white;
+}
+.prof-body{
+    width: 83%;
+    height: 100%;
+    /* background-color: aqua; */
+}
+.container{
+    width: 95%;
+    height: 90vh;
+    margin:3% 3%;
+    box-shadow: 0 0 5px gray,
+    0 0 10px gray;
+    background-color: white;
+}
+.container h3{
+    color: gray;
+    text-align: center;
+}
+ .button{
+    width: 90px;
+    height: 40px;
+    background-color: #16858C;
+    border-radius: 5px/5px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    margin-left: 90%;
+}
+.table-style{
+    /* border: 2px solid gray; */
+    border-collapse: collapse;
+    min-width:900px;
+    width: 100%;
+    margin: 50px auto;
+    cursor: pointer;
+    /* box-shadow: 5px 5px 10px gray; */
+    border: none;
+    /* background-color: aqua; */
+}
+thead tr{
+    color: white;
+    background-color: #16858C;
+    font-weight: bolder;
+    font-size: 18px;
+    border-top: 1px solid gainsboro;
+    border-bottom: 1px solid gainsboro;
+}
+
+th, td{
+    padding: 10px 25px;
+    }
+    tbody,th,tr,td{
+        text-align: center;
+        /* border-top: 1px solid gray; */
+        border-bottom: 1px solid gainsboro;
+        font-weight: 500;
+    }
+
+thead td{
+    border-top: 1px solid gainsboro;
+    border-bottom: 1px solid gainsboro;
+}
+.bout{
+    width: 150px;
+    height: 40px;
+    background-color: #16858C;
+    border: 1px solid #16858C ;
+    border-radius: 5px/5px;
+    color: white;
+    font-weight: bolder;
+    cursor: pointer;
+}
+.page{
+    width: 150px;
+    height: 50px;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: space-around;
+    left: 60%;
+    transform: translate(-50%,-50%);
+    /* box-shadow: 0 2px 20px 0 gainsboro; */
+/* border-radius: 50%; */
+}
+.page a{
+    color: black;
+    padding: 2%;
+    border-radius: 100%;
+    margin: -5% 2px;
+    font-size: 20px;
+    box-shadow: 0 2px 5px 0 black;
+}
+.page a:hover{
+   background-color: #16858C;
+   color: white;
+}
+
+
+
+
+
+

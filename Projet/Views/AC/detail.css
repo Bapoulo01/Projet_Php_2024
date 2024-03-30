@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+section{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    display: flex;
+}
+.Dashboard{
+    width: 20%;
+    height: 100%;
+    background-color: #16858C;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+.profil{
+    width: 150px;
+    height: 100px;
+    background-image: url(Images/profi.jpg);
+    background-size: cover;
+    border-radius: 100%;
+    margin:10% 35%;
+}
+.Dashboard a{
+    width: 90%;
+    height: 50px;
+    background-color: #16858C;
+    margin-bottom: 2%; 
+    border: 1px solid white; 
+    font-size: 20px;
+    font-weight: bolder;
+    color: white;
+    border-radius: 5px/5px;
+
+}
+.Dashboard  a:last-child{
+    border: 1px solid rgba(4, 4, 4, 0.46);
+    background-color: rgba(4, 4, 4, 0.46);
+    cursor: pointer; 
+}
+.Dashboard  a:hover{
+    background-color: rgba(4, 4, 4, 0.46);
+    border: 1px solid rgba(4, 4, 4, 0.46);
+    border-radius: 0px 15px 0px 10px;
+    color: white;
+}
+.prof-body{
+    width: 80%;
+    height: 100%;
+    /* background-color: aqua; */
+}
+.container{
+    width: 95%;
+    height: 90vh;
+    margin:3% 3%;
+    box-shadow: 0 0 5px gray,
+    0 0 10px gray;
+    background-color: white;
+}
+.face{
+    width: 250px;
+    height: 200px;
+    background-image: url(Images/profi.jpg);
+    background-size: cover;
+    margin-left: 35%;
+    margin-bottom: 5%;
+}
+.but{
+    width: 100px;
+    height: 40px;
+    background-color: red;
+    color: white;
+    margin: 30% 200%;
+    font-weight: bolder;
+    font-size: 16px;
+    border: 1px solid red ;
+    border-radius: 5px/5px;
+    cursor: pointer; 
+}
+.butt{
+    width: 100px;
+    height: 40px;
+    background-color: #07B12D;
+    color: white;
+    margin: 30% 250%;
+    font-weight: bolder;
+    font-size: 16px;
+    border: 1px solid #07B12D ;
+    border-radius: 5px/5px;
+    cursor: pointer; 
+}
+.but:hover{
+    filter: brightness(1.1);
+}
