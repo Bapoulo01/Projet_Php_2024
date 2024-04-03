@@ -2,8 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="../css/style.css"> -->
-    <link rel="stylesheet" href="../css/liste.prof.css">
+    <link rel="stylesheet" href="../css/style.css">
 
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
     <title>Menu</title>
@@ -28,7 +27,7 @@
             </a>
             <a href="<?=path("userconnect" , "show-prof")?>"><span style="color: white;size: 100px;margin: 5% 3%;" class="fa fa-list "></span>Liste des Professeur</a>
             <a href="<?=path("classe" ,"show-classe")?>"><span style="color: white;size: 100px;margin: 5% 3%;" class="fa fa-list "></span>Liste des Classes</a>
-            <a href="definir.annee.html"><span style="color: white;size: 100px;margin: 5% 3%;" class="fa fa-pencil-square-o"></span>Définir l'année scolaire</a>
+            <a href="<?=path("annee" ,"show-annee")?>"><span style="color: white;size: 100px;margin: 5% 3%;" class="fa fa-pencil-square-o"></span>Définir l'année scolaire</a>
         <?php endif ?>
         <?php if( $_SESSION["userConnect"]["role"]=="ROLE_AC"):?>
             <a href="liste.etudiant.html"><span style="color: white;size: 100px;margin: 5% 3%;" class="fa fa-list" ></span>Liste des etudiants</a>
@@ -46,7 +45,7 @@
             <a href="justification.html"><span style="color: white;size: 100px;margin: 5% 3%;" class="fa fa-list "></span>Mes justifications</a>
         <?php endif ?>
 
-            <a href="index.html"><span style="color: white;size: 100px;margin: 5% 3%;" class="fa fa-sign-out" ></span>Se Déconnecter</a>
+        <a href="<?=path("userconnect" ,"logout")?>"><span style="color: white;size: 100px;margin: 5% 3%;" class="fa fa-sign-out" ></span>Se Déconnecter</a>
     </div> 
 </body>
 </html>

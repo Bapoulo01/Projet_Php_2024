@@ -91,37 +91,39 @@ INSERT INTO `Modules` (`id_module`, `Libelle_module `) VALUES
 -- creation table cours
 CREATE TABLE Cours(
    Id_Cours int(11) NOT NULL  AUTO_INCREMENT,
-   DateC DATE,
    id_module  int NOT NULL,
    PRIMARY KEY(Id_Cours),
    FOREIGN KEY(id_module ) REFERENCES Modules(id_module )
 );
 
 --Insertion dans la table cours
-INSERT INTO `cours` (`Id_Cours`, `DateC`, `id_module`) VALUES 
-(NULL, '2024-03-10', '1'),
-(NULL, '2024-03-20', '3'), 
-(NULL, '2024-03-15', '4'), 
-(NULL, '2024-03-22', '1'), 
-(NULL, '2024-03-15', '2');
+INSERT INTO `cours` (`Id_Cours`, `id_module`) VALUES 
+(NULL,'1'),
+(NULL,'3'), 
+(NULL,'4'), 
+(NULL,'1'), 
+(NULL,'2');
 
 -- creation table Seance
 CREATE TABLE Séance(
    Id_Seance int(11) NOT NULL  AUTO_INCREMENT,
    Hd TIME,
    Hf TIME,
+   DateS DATE,
+   Idabs  NOT NULL 
    Id_Cours int NOT NULL,
    PRIMARY KEY(Id_Seance),
+   FOREIGN KEY(Idabs) REFERENCES Absence(Idabs),
    FOREIGN KEY(Id_Cours) REFERENCES Cours(Id_Cours)
 );
 
 --Insertion dans la table seance
-INSERT INTO `séance` (`Id_Seance`, `Hd`, `Hf`, `Id_Cours`) VALUES 
-(NULL, '08:00:00', '10:00:00', '1'),
-(NULL, '08:00:00', '10:00:00', '3'),
-(NULL, '12:00:00', '14:00:00', '4'),
-(NULL, '11:00:00', '13:00:00', '1'),
-(NULL, '10:00:00', '12:00:00', '2');
+INSERT INTO `séance` (`Id_Seance`, `Hd`, `Hf`, `DateS`,`Idabs`, `Id_Cours`) VALUES 
+(NULL, '08:00:00', '10:00:00','2024-03-10','1','1'),
+(NULL, '08:00:00', '10:00:00','2024-03-20','2','3'),
+(NULL, '12:00:00', '14:00:00','2024-03-15','3','4'),
+(NULL, '11:00:00', '13:00:00','2024-03-15','4','1'),
+(NULL, '10:00:00', '12:00:00','2024-03-05','5','2');
 
 -- creation table Semestre
 CREATE TABLE Semestre(
@@ -197,15 +199,20 @@ CREATE TABLE Absence(
    Idabs  int(11) NOT NULL  AUTO_INCREMENT,
    Dateabs DATE ,
    id_classe int NOT NULL,
+   id int NOT NULL,
    PRIMARY KEY(Idabs),
-   FOREIGN KEY(id_classe) REFERENCES Classe(id_classe)
+   FOREIGN KEY(id_classe) REFERENCES Classe(id_classe),
+   FOREIGN KEY(id) REFERENCES users(id)
 );
 
 --Insertion dans la table absence
-INSERT INTO `absence` (`Idabs`, `Dateabs`, `id_classe`) VALUES 
-(NULL, '2024-03-10', '1'),
-(NULL, '2024-03-15', '5'),
-(NULL, '2024-03-20', '3'),
+INSERT INTO `absence` (`Idabs`, `Dateabs`, `id_classe`,`id`) VALUES 
+(NULL, '2024-03-10', '1','10'),
+(NULL, '2024-03-20', '5','11'),
+(NULL, '2024-03-15', '3','12'), 
+(NULL, '2024-03-15', '7','13'),
+(NULL, '2024-03-05', '2','14'),
+
 
 -- creation table Etat_just
 CREATE TABLE Etat_just(
@@ -239,16 +246,17 @@ INSERT INTO `justification` (`IDjust`, `Datejust`, `Motif`, `id_etat`, `Idabs`) 
 (NULL, '2024-03-20', 'Malade', '1', '3');
 
 -- creation table anneescolaire
-CREATE TABLE AnneeScolaire(
+CREATE TABLE anneeScolaire(
    id_annee int(11) NOT NULL  AUTO_INCREMENT,
-   Libele_annee VARCHAR(20),
+   Libelle_annee VARCHAR(20),
+   etat VARCHAR(10),
    PRIMARY KEY(id_annee)
 );
 
 --Insertion dans la table justification
-INSERT INTO `anneescolaire` (`id_annee`, `Libele_annee`) VALUES 
-(NULL, '2023-2024'),
-(NULL, '2022-2023');
+INSERT INTO `anneescolaire` (`id_annee`, `Libelle_annee`,`etat`) VALUES 
+(NULL, '2023-2024','En cours'),
+(NULL, '2022-2023','passer');
 
 -- creation table Inscription
 CREATE TABLE Inscription(
@@ -256,15 +264,23 @@ CREATE TABLE Inscription(
    date_inscription DATE ,
    id_annee int NOT NULL,
    id_classe int NOT NULL,
+   id int NOT NULL,
    PRIMARY KEY(id_inscription),
    FOREIGN KEY(id_annee) REFERENCES AnneeScolaire(id_annee),
-   FOREIGN KEY(id_classe ) REFERENCES Classe(id_classe )
+   FOREIGN KEY(id_classe) REFERENCES Classe(id_classe ),
+   FOREIGN KEY(id) REFERENCES users(id)
 );
 
 --Insertion dans la table inscription
-INSERT INTO `inscription` (`id_inscription`, `date_inscription`, `id_annee`, `id_classe`) VALUES 
-(NULL, '2024-03-24', '1', '1'),
-(NULL, '2024-03-15', '1', '3');
+INSERT INTO `inscription` (`id_inscription`, `date_inscription`, `id_annee`, `id_classe`,`id`) VALUES 
+(NULL, '2024-03-24', '1', '1','10'),
+(NULL, '2024-03-15', '1', '3','11'),
+(NULL, '2024-01-10', '1', '5','12'),
+(NULL, '2024-05-20', '1', '7','13'),
+(NULL, '2024-02-03', '1', '1','14'),
+
+
+
 
 -- creation table enseigne(tab intermediaire users et cours)
 CREATE TABLE Enseigne(

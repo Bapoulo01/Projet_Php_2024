@@ -2,6 +2,12 @@
 
 
 if (isset($_REQUEST["action"])) {
+    
+    if ($_REQUEST["action"] == "logout") {
+        unset($_SESSION["userConnect"]);
+        session_destroy();
+        header("location:".WEBROOT);
+    }
     if ($_REQUEST["action"]=="send") {
         $userConnect=connexion($_POST["login"],$_POST["mdp"]);
         // dd($_POST);
@@ -12,10 +18,10 @@ if (isset($_REQUEST["action"])) {
             
             loadView("RP/liste.prof.html.php",["profs"=>$profs]);
            }
-        //    else if ($userConnect["role"]=="ROLE_AC") {
-        //     $profs=findAllProf();
-        //     loadView("RP/liste.prof.html.php",["prof"=>$profs]);
-        //    }
+           else if ($userConnect["role"]=="ROLE_AC") {
+            $Etudiants=findAllEtudiant();
+            loadView("AC/liste.etudiant.html.php",["Etudiants"=> $Etudiants]);
+           }
         //    else if ($userConnect["role"]=="ROLE_PROF") {
         //     $profs=findAllProf();
         //     loadView("RP/liste.prof.html.php",["prof"=>$profs]);
@@ -27,14 +33,29 @@ if (isset($_REQUEST["action"])) {
         }
         else{
          $message="Mot de pass Incorrect";
-            require_once('../views/loging.html.php');
+            // require_once('../views/loging.html.php');
             header("location".WEBROOT);
         }
+    }if(isset($_REQUEST["action"])){
+        if ($_REQUEST["action"]!="send" && !isset($_SESSION["userConnect"]) ) {
+            header("location".WEBROOT);
+        exit;
     }
+    else if ($_REQUEST["action"]=="show-prof") {
+        $profs=findAllProf();
+        loadView("RP/liste.prof.html.php",["profs"=>$profs]);
+    }
+    
+    // else if ($_REQUEST["action"]=="show-cours") {
+    //     $profs=findAllProf();
+    //     loadView("RP/liste.prof.html.php",["profs"=>$profs]);
+    // }
+} 
+  
 }
 
      //Page par defaut
      else {
-      // loadView("loging.html.php");
+    //   loadView("loging.html.php");
         require_once('../views/layout/connexion.layout.php');
     }

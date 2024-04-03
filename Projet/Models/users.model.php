@@ -102,7 +102,9 @@ function findAllUsers():array{
 
 // fonction qui retourne les etudiants
 function findAllEtudiant():array{
-  $sql="select * from users u, role r WHERE u.id_Role = r.id_Role and nom_Role LIKE 'Etudiant' ";
+  $sql="select Prenom,Nom,matricule,Libelle_classe AS classe FROM `users`u,`classe`cl,role r 
+        where u.`id_role`=r.`id_role` AND nom_Role LIKE 'ROLE_ETUDIANT'
+        GROUP BY id";
   $data=null;
   //Classe PDO
   //1-Connexion SGBD et selectionner la BD

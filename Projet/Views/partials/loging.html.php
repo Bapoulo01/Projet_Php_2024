@@ -9,9 +9,8 @@
         <div>
             <label>password</label>
              <input type="password" name="mdp" placeholder="password">
-           
         </div>  
-        <!-- <input type="submit" value="Se connecter" name="connect"> -->
+
     <button type=submit name="action" value="send"> Se connecter</button>
     <div>
         <?php if (isset($message)) {
