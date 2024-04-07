@@ -102,9 +102,8 @@ function findAllUsers():array{
 
 // fonction qui retourne les etudiants
 function findAllEtudiant():array{
-  $sql="select Prenom,Nom,matricule,Libelle_classe AS classe FROM `users`u,`classe`cl,role r 
-        where u.`id_role`=r.`id_role` AND nom_Role LIKE 'ROLE_ETUDIANT'
-        GROUP BY id";
+  $sql="select u.id,Prenom,Nom,matricule,libelle_classe AS classe 
+  FROM `users`u,`classe`c,`role` r,`inscription`i WHERE u.id = i.id and c.id_classe = i.id_classe AND nom_Role like 'ROLE_ETUDIANT'";
   $data=null;
   //Classe PDO
   //1-Connexion SGBD et selectionner la BD
@@ -134,7 +133,7 @@ function findAllEtudiant():array{
   return $data;
 }
 
-//fonction pour la connexion
+//fonction pour la l'Id de d'etudiant
 function findEtuduantsById($etudiantId):array|null{
   $sql="select * from users u where id= ".$etudiantId;
   $data=null;
@@ -156,6 +155,41 @@ function findEtuduantsById($etudiantId):array|null{
 
   //3-Recuperer les donnes de la requete
   $data= $statement->fetch(); //retourne plusieur resultat
+
+  //4-fermer la connexion
+  $conn==null;
+  $statement==null;
+  } catch(PDOException $e){
+      echo "Erreur : " . $e->getMessage();
+  }
+  return $data;
+}
+
+
+//fonction pour la l'Id de d'etudiant
+function findEtuduantsByClasseId($idClasse):array|null{
+  $sql="select u.id,Prenom,Nom,matricule,libelle_classe ,c.id_classe 
+  FROM `users`u,`classe`c,`role` r,`inscription`i ,`absence`a WHERE u.id = i.id And u.id=a.id 
+  AND c.id_classe = i.id_classe And c.id_classe=$idClasse AND nom_Role like 'ROLE_ETUDIANT';";
+  $data=null;
+  //Classe PDO
+  //1-Connexion SGBD et selectionner la BD
+  $servername = 'localhost';
+  $username = 'root';//root
+  $password = '';
+  $dbname="projet_php_2024";
+   //On essaie de se connecter
+  try {  
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+      //On définit le mode d'erreur de PDO sur Exception
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    // $conn->setAttibute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_NUM);
+    //Select
+  //2-Executer la requete
+  $statement = $conn->query( $sql); //resultat 
+
+  //3-Recuperer les donnes de la requete
+  $data= $statement->fetchAll(); //retourne plusieur resultat
 
   //4-fermer la connexion
   $conn==null;

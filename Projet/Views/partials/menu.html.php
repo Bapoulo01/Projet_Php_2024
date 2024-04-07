@@ -12,7 +12,7 @@
         <div class="infos">
                 <div class="profil"><img src="../image/X.png" alt=""></div>
                 <h3>Prénom & Nom:<?= $_SESSION["userConnect"]["prenom"]." ". $_SESSION["userConnect"]["nom"]?></h3>
-                <!-- <h3>Année: <?= $anneeEncours["libAs"]?></h3>  -->
+                <!-- <h3>Année: <?= $anneeEncours["Libelle_annee"]?></h3>  -->
                   <!-- <h3>Classe: L2 Devweb</h3> -->
 
 
@@ -21,17 +21,14 @@
         <a href="tabbord.html"><span style="color: white;size: 100px;margin: 5% 3%;" class="fa fa-tasks" aria-hidden="true"></span>Tableau de bord</span></a>
 
         <?php if( $_SESSION["userConnect"]["role"]=="ROLE_RP"):?>
-            <a href="mes.cours.html">
-                <span style="color: white;size: 100px;margin: 5% 3%;" class="fa fa-list "></span>
-                Liste des cours
-            </a>
+            <a href="<?=path("cours" , "show-cours")?>"><span style="color: white;size: 100px;margin: 5% 3%;" class="fa fa-list "></span>Liste des cours</a>
             <a href="<?=path("userconnect" , "show-prof")?>"><span style="color: white;size: 100px;margin: 5% 3%;" class="fa fa-list "></span>Liste des Professeur</a>
             <a href="<?=path("classe" ,"show-classe")?>"><span style="color: white;size: 100px;margin: 5% 3%;" class="fa fa-list "></span>Liste des Classes</a>
             <a href="<?=path("annee" ,"show-annee")?>"><span style="color: white;size: 100px;margin: 5% 3%;" class="fa fa-pencil-square-o"></span>Définir l'année scolaire</a>
         <?php endif ?>
         <?php if( $_SESSION["userConnect"]["role"]=="ROLE_AC"):?>
-            <a href="liste.etudiant.html"><span style="color: white;size: 100px;margin: 5% 3%;" class="fa fa-list" ></span>Liste des etudiants</a>
-            <a href="list.cour.html"><span style="color: white;size: 100px;margin: 5% 3%;" class="fa fa-list "></span>Liste des cours</a>
+            <a href="<?=path("userconnect" , "show-etudiant")?>"><span style="color: white;size: 100px;margin: 5% 3%;" class="fa fa-list" ></span>Liste des etudiants</a>
+            <a href="<?=path("cours" , "show-cours")?>"><span style="color: white;size: 100px;margin: 5% 3%;" class="fa fa-list "></span>Liste des cours</a>
             <a href="liste.classe.html"><span style="color: white;size: 100px;margin: 5% 3%;" class="fa fa-list "></span>Liste des classes</a>
             <a href="liste.justification.html"><span style="color: white;size: 100px;margin: 5% 3%;" class="fa fa-list "></span>Liste des justifications</a>
         <?php endif ?>

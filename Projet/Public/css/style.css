@@ -105,6 +105,17 @@ section{
     border: none;
     /* background-color: aqua; */
 }
+.table-style-annee{
+    /* border: 2px solid gray; */
+    border-collapse: collapse;
+    min-width:250px;
+    width: 50%;
+    margin: 40px auto;
+    cursor: pointer;
+    /* box-shadow: 5px 5px 10px gray; */
+    border: none;
+    /* background-color: aqua; */
+}
 thead tr{
     color: white;
     background-color: #16858C;
@@ -139,6 +150,128 @@ button.bout{
     font-weight: bolder;
     cursor: pointer;
 }
+
+form{
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    /* background-color:red; */
+    border-radius: 10px/10px;
+    /* box-shadow: 0 0 5px gray,
+    0 0 10px gray; */
+    padding: 5%;
+}
+.annee-form{
+    width: 90%;
+    height: 180px;
+    margin: 0 auto;
+    /* background-color:red; */
+    border-radius: 10px/10px;
+    /* box-shadow: 0 0 5px gray,
+    0 0 10px gray; */
+    padding: 5%;
+}
+label{
+    margin-bottom: 5px;
+    font-size: 22px;
+}
+input{
+    padding: 10px;
+    border: 1px solid gainsboro;
+    margin-bottom: 5%;
+    border-radius: 5px/5px;
+    margin-top: 1%;
+    /* margin-left: 2%; */
+    background-color: gainsboro;
+    width: 100%;
+
+}
+ .inpt{
+    padding: 10px;
+    border: 1px solid gainsboro;
+    margin-bottom: 5%;
+    border-radius: 5px/5px;
+    margin-left: 2%;
+    background-color: gainsboro;
+    width: 35%;
+
+}
+select{
+    padding: 10px;   
+    width: 35%;
+    margin-left: 4%;
+    background-color: gainsboro;
+    border: 1px solid gainsboro;
+}
+#choix{
+    padding: 10px;   
+    width: 100%;
+    margin-bottom: 2%;
+    margin-left: 1%;
+    background-color: gainsboro;
+    border: 1px solid gainsboro;
+}
+
+#butt{
+    width: 100px;
+    height: 40px;
+    background-color: #16858C;
+    color: white;
+    margin: 6% 45%;
+    font-weight: bolder;
+    font-size: 16px;
+    border: 1px solid #16858C ;
+    border-radius: 5px/5px;
+    cursor: pointer; 
+}
+#butt:hover{
+    filter: brightness(1.1);
+}
+#bout{
+    width: 100px;
+    height: 40px;
+    background-color: #16858C;
+    color: white;
+    margin: 2% 45%;
+    font-weight: bolder;
+    font-size: 16px;
+    border: 1px solid #16858C ;
+    border-radius: 5px/5px;
+    cursor: pointer; 
+}
+#bout:hover{
+    filter: brightness(1.1);
+}
+.but{
+    width: 120px;
+    height: 40px;
+    background-color: #16858C;
+    color: white;
+    margin: 0% 45%;
+    font-weight: bolder;
+    font-size: 18px;
+    border: 1px solid #16858C ;
+    border-radius: 5px/5px;
+    cursor: pointer; 
+}
+.but:hover{
+    filter: brightness(1.1);
+}
+#but-add{
+    width: 90px;
+    height: 40px;
+    background-color: #16858C;
+    color: white;
+    margin: -2% 45%;
+    font-weight: bolder;
+    font-size: 16px;
+    border: 1px solid #16858C ;
+    border-radius: 5px/5px;
+    cursor: pointer; 
+}
+#but-add:hover{
+    filter: brightness(1.1);
+}
 .page{
     width: 150px;
     height: 50px;
@@ -161,6 +294,18 @@ button.bout{
     box-shadow: 0 2px 5px 0 black;
 }
 .page a:hover{
+   background-color: #16858C;
+   color: white;
+}
+.pag a{
+    color: black;
+    padding: 1%;
+    border-radius: 100%;
+    margin: 2% 5%;
+    font-size: 20px;
+    box-shadow: 0 2px 5px 0 black;
+}
+.pag a:hover{
    background-color: #16858C;
    color: white;
 }

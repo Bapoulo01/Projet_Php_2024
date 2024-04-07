@@ -34,10 +34,10 @@
                             <td>40</td>
                             <td>20</td>
                             <td>
-                            <a href="<?=WEBROOT;?>/?controller=seance&action=addSeance"><button class="bout" type="submit">Séance</button></a>
+                            <a href="<?=path("seance" ,"new-seance")?>"><button class="bout" type="submit">Séance</button></a>
                             </td>
                             <td>
-                            <a href="<?=WEBROOT;?>/?controller=seance&action=ShowSeance"><button  class="btn" type="submit">voir séance cours</button></a>
+                            <a href="<?=path("seance" ,"")?>"><button  class="btn" type="submit">voir séance cours</button></a>
                             </td>
                             <td>
                                 <span style="color: red;size: 150px;margin-left: 2%;" class="fa fa-trash-o" aria-hidden="true"></span>

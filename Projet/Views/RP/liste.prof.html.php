@@ -16,7 +16,7 @@ $tab=array_slice($profs , $position, $nombre_ligne);
         <div class="prof-body">
             <div class="container">
                 <h3 stl>LISTE DES PROFESSEURS</h3>
-                <a href="ajout.prof.html"><button type="submit">Ajouter <span class="fa fa-plus" ></span></button></a>
+                <a href="<?=path("userconnect", "new-prof")?>"><button class="">Ajouter <span class="fa fa-plus" ></span></button></a>
                 <table class="table-style">
                     <thead>
                         <tr>
@@ -45,7 +45,7 @@ $tab=array_slice($profs , $position, $nombre_ligne);
                 <div style="margin:0 -8%" class="page">
                     <a href=""><span class="fa fa-long-arrow-left"></span></a>
                     <?php for ($i=1; $i <=$nombre_page ; $i++):?>
-                  <a href="<?=WEBROOT;?>/?action=show-prof&page=<?= $i?>"><?= $i ?> </a>
+                  <a href="<?=WEBROOT;?>/?controller=userconnectaction=show-prof&page=<?= $i?>"><?= $i ?> </a>
                 <?php endfor?>
                     <a href=""><span class="fa fa-long-arrow-right"></span></a>
                 </div>

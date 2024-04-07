@@ -92,17 +92,18 @@ INSERT INTO `Modules` (`id_module`, `Libelle_module `) VALUES
 CREATE TABLE Cours(
    Id_Cours int(11) NOT NULL  AUTO_INCREMENT,
    id_module  int NOT NULL,
+   Heure_total  TIME,
    PRIMARY KEY(Id_Cours),
    FOREIGN KEY(id_module ) REFERENCES Modules(id_module )
 );
 
 --Insertion dans la table cours
-INSERT INTO `cours` (`Id_Cours`, `id_module`) VALUES 
-(NULL,'1'),
-(NULL,'3'), 
-(NULL,'4'), 
-(NULL,'1'), 
-(NULL,'2');
+INSERT INTO `cours` (`Id_Cours`, `id_module`,`Heure_total `) VALUES 
+(NULL,'1' ,'40:00:00'),
+(NULL,'3' ,'40:00:00'), 
+(NULL,'4' ,'40:00:00'), 
+(NULL,'1' ,'40:00:00'), 
+(NULL,'2' ,'40:00:00');
 
 -- creation table Seance
 CREATE TABLE Séance(
@@ -295,7 +296,9 @@ INSERT INTO `enseigne` (`id`, `Id_Cours`) VALUES
 ('1', '1'), 
 ('2', '3')
 ('3', '2'), 
-('4', '4');
+('4', '4'),
+('5', '3')
+
 
 -- creation table enseigne(tab intermediaire cours et semestre)
 CREATE TABLE definir_semestre(
@@ -321,7 +324,9 @@ CREATE TABLE pourrait_avoir(
 --Insertion dans la table pourrait_avoir(tab intermediaire cours et Classe)
 INSERT INTO `pourrait_avoir` (`Id_Cours`, `id_classe`) VALUES
 ('1', '1'),
-('2', '1');
+('2', '2'),
+('3', '5'),
+
 
 -- creation table enseigne(tab intermediaire cours et absence)
 CREATE TABLE avoir1(

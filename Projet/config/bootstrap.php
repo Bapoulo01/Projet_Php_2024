@@ -8,6 +8,10 @@ require_once(ROOT."/config/database.php");
 
 require_once(ROOT."/Models/users.model.php");
 require_once(ROOT."/Models/classe.model.php");
+require_once(ROOT."/Models/seance.model.php");
+require_once(ROOT."/Models/annee.model.php");
+
+
 
 
 ?>

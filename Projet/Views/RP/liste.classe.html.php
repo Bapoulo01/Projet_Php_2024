@@ -25,7 +25,7 @@ $tab=array_slice($classes , $position, $nombre_ligne);
         <div class="prof-body">
             <div class="container">
                 <h3>LISTE DES CLASSES</h3>
-                <a href="ajout.classe.html"><button class="button" type="submit">Ajouter <span class="fa fa-plus" ></span></button></a>
+                <a href="<?=path("classe", "new-classe")?>"><button class="button" type="submit">Ajouter <span class="fa fa-plus" ></span></button></a>
                 <table class="table-style">
                     <thead>
                         <tr>
@@ -36,6 +36,7 @@ $tab=array_slice($classes , $position, $nombre_ligne);
                             <td>Action</td>
                         </tr>
                     </thead>
+                    
                     <?php foreach ($tab as $value):?>
                     <tbody>
                         <tr>
@@ -43,7 +44,10 @@ $tab=array_slice($classes , $position, $nombre_ligne);
                             <td><?=$value["Filiere"]?></td>
                             <td><?=$value["Niveau"]?></td>
                             <td>
-                                <a href="liste.etudiantL1.html"><button class="bout" type="submit">Liste des Etudiants</button></a>
+                            
+                            <a href="<?=WEBROOT?>/?controller=classe&action=Detail-EtuClass&idClasse=<?=$value['id_classe']?>">
+                                <button class="bout">Liste des Etudiants</button>
+                            </a>
                             </td>
                             <td>
                                 <span style="color: black;size: 150px;" class="fa fa-pencil-square-o" aria-hidden="true"></span>
@@ -56,7 +60,7 @@ $tab=array_slice($classes , $position, $nombre_ligne);
                 <div style="margin:-2% -10%" class="page">
                     <a href=""><span class="fa fa-long-arrow-left"></span></a>
                     <?php for ($i=1; $i <=$nombre_page ; $i++):?>
-                  <a href="<?=WEBROOT;?>/?action=show-classe&page=<?= $i?>"><?= $i ?> </a>
+                  <a href="<?=WEBROOT;?>/?controller=classe&action=show-classe&page=<?= $i?>"><?= $i ?> </a>
                 <?php endfor?>
                     <a href=""><span class="fa fa-long-arrow-right"></span></a>
                 </div>

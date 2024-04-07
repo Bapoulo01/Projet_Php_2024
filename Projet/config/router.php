@@ -7,7 +7,11 @@ if ((isset($_REQUEST["controller"]))) {
     else if($_REQUEST["controller"]=="classe"){
         require_once(ROOT."/Controllers/classe.controller.php");
     }
+    else if($_REQUEST["controller"]=="annee"){
+        require_once(ROOT."/Controllers/annee.controller.php");
+    }
 
-} else {
+}
+ else {
     require_once(ROOT."/Controllers/users.controller.php");
 }

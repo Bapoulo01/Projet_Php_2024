@@ -1,6 +1,5 @@
 <?php
 
-
 if (isset($_REQUEST["action"])) {
     
     if ($_REQUEST["action"] == "logout") {
@@ -15,7 +14,7 @@ if (isset($_REQUEST["action"])) {
             $_SESSION["userConnect"]=$userConnect;  // authentification 
            if ($userConnect["role"]=="ROLE_RP") {
             $profs=findAllProf();
-            
+
             loadView("RP/liste.prof.html.php",["profs"=>$profs]);
            }
            else if ($userConnect["role"]=="ROLE_AC") {
@@ -45,6 +44,13 @@ if (isset($_REQUEST["action"])) {
         $profs=findAllProf();
         loadView("RP/liste.prof.html.php",["profs"=>$profs]);
     }
+    else if ($_REQUEST["action"]=="new-prof") {
+        loadView("RP/Newliste.prof.html.php");
+    }
+    else if ($_REQUEST["action"]=="show-etudiant") {
+        $Etudiants=findAllEtudiant();
+        loadView("AC/liste.etudiant.html.php",["Etudiants"=> $Etudiants]);
+       }
     
     // else if ($_REQUEST["action"]=="show-cours") {
     //     $profs=findAllProf();

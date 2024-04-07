@@ -1,7 +1,7 @@
 <?php
 
   // fonction qui retourne les etudiants
-  function findAllGseance():array{
+  function findAllseance():array{
     $sql="select * FROM `seance`";
     $data=null;
     //Classe PDO

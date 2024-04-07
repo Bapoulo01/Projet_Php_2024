@@ -2,7 +2,7 @@
 
   // fonction qui retourne les etudiants
   function findAllclasse():array{
-    $sql="select Libelle_classe AS Nom,nom_filiere AS Filiere,nom_niveau AS Niveau FROM `classe`cl,`filiere`f,`niveau`n
+    $sql="select id_classe,Libelle_classe AS Nom,nom_filiere AS Filiere,nom_niveau AS Niveau FROM `classe`cl,`filiere`f,`niveau`n
     WHERE cl.`id_filiere`= f.`id_filiere` AND cl.`id_niveau`= n.`id_niveau`;";
     $data=null;
     //Classe PDO

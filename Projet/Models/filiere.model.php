@@ -1,8 +1,8 @@
 <?php
 
   // fonction qui retourne les etudiants
-  function findAllcours():array{
-    $sql="select * FROM `cours`";
+  function findAllfiliere():array{
+    $sql="select * FROM `filiere`";
     $data=null;
     //Classe PDO
     //1-Connexion SGBD et selectionner la BD
